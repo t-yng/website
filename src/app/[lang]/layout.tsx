@@ -1,7 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { locales, type Locale } from "@/lib/i18n";
-import { notFound } from "next/navigation";
+import { defaultLocale, isLocale, locales } from "@/lib/i18n";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -15,11 +14,11 @@ export default async function LangLayout({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  if (!locales.includes(lang as Locale)) notFound();
+  const locale = isLocale(lang) ? lang : defaultLocale;
 
   return (
     <>
-      <Header lang={lang as Locale} />
+      <Header lang={locale} />
       <main>{children}</main>
       <Footer />
     </>

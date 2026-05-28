@@ -50,17 +50,6 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
           mb: "4",
         })}
       />
-      <p
-        className={css({
-          fontSize: "lg",
-          color: "token(colors.secondary)",
-          mb: "12",
-        })}
-      >
-        {locale === "ja"
-          ? "技術的な学びや調査内容などを書き留めているブログです。"
-          : "Technical articles and notes on software development."}
-      </p>
 
       <ol className={css({ listStyle: "none", p: 0, m: 0 })}>
         {posts.map((post) => (
