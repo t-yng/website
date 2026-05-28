@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { css } from "@/styled-system/css";
+import { SocialLink } from "@/components/SocialLink";
+import { GitHubIcon } from "@/components/icons/GitHubIcon";
+import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 
 export const metadata: Metadata = {
   title: "About — Tomohiro Yanagi",
@@ -123,6 +126,26 @@ export default function AboutPage() {
             analysis and system design to backend development, frontend implementation, testing, and
             deployment.
           </p>
+
+          {/* Social links */}
+          <div
+            className={css({
+              display: "flex",
+              gap: "4",
+              alignItems: "center",
+            })}
+          >
+            <SocialLink href="https://github.com/t-yng" ariaLabel="GitHub">
+              <GitHubIcon />
+            </SocialLink>
+
+            <SocialLink
+              href="https://www.linkedin.com/in/tomohiro-yanagi"
+              ariaLabel="LinkedIn"
+            >
+              <LinkedInIcon />
+            </SocialLink>
+          </div>
         </div>
       </div>
 
