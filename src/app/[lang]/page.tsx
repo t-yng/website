@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { css } from "@/styled-system/css";
+import { ButtonLink } from "@/components/ButtonLink";
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -77,47 +77,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             flexWrap: "wrap",
           })}
         >
-          <Link
-            href={`/${lang}/projects`}
-            className={css({
-              display: "inline-flex",
-              alignItems: "center",
-              px: "6",
-              py: "3",
-              backgroundColor: "token(colors.buttonBg)",
-              color: "token(colors.buttonText)",
-              borderRadius: "md",
-              fontSize: "sm",
-              fontWeight: "600",
-              cursor: "pointer",
-              _hover: { opacity: 0.85 },
-              transition: "opacity 0.2s",
-            })}
-          >
-            View Projects
-          </Link>
-          <Link
-            href={`/${lang}/contact`}
-            className={css({
-              display: "inline-flex",
-              alignItems: "center",
-              px: "6",
-              py: "3",
-              border: "1.5px solid token(colors.border)",
-              color: "token(colors.text)",
-              borderRadius: "md",
-              fontSize: "sm",
-              fontWeight: "600",
-              cursor: "pointer",
-              _hover: {
-                borderColor: "token(colors.text)",
-                backgroundColor: "token(colors.surface)",
-              },
-              transition: "border-color 0.2s, background-color 0.2s",
-            })}
-          >
+          <ButtonLink href={`/${lang}/projects`}>View Projects</ButtonLink>
+          <ButtonLink href={`/${lang}/contact`} variant="outline">
             Get in Touch
-          </Link>
+          </ButtonLink>
         </div>
       </div>
     </section>
