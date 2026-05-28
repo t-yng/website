@@ -11,6 +11,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         overflow: "hidden",
       })}
     >
+      <ScrollReset />
       {/* Blob 1 — top-right, blue */}
       <div
         aria-hidden="true"

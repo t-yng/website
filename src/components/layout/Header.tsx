@@ -58,9 +58,9 @@ export default function Header({ lang }: Props) {
   const pathname = usePathname();
 
   const navLinks = [
-    { href: `/${lang}/about`, label: "About" },
-    { href: `/${lang}/projects`, label: "Projects" },
     { href: `/${lang}/blog`, label: "Blog" },
+    { href: `/${lang}/projects`, label: "Projects" },
+    { href: `/${lang}/about`, label: "About" },
   ];
 
   const pathWithoutLang = pathname.replace(`/${lang}`, "") || "";
