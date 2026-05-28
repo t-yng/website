@@ -30,7 +30,7 @@ export default defineConfig({
           accent: { value: { base: "#2563EB", _dark: "#60A5FA" } },
           accentHover: { value: { base: "#1D4ED8", _dark: "#93C5FD" } },
           buttonBg: { value: { base: "#09090B", _dark: "#E8E9F0" } },
-          buttonText: { value: { base: "#FAFAFA", _dark: "FFFFFF" } },
+          buttonText: { value: { base: "#FAFAFA", _dark: "#09090B" } },
         },
       },
     },
