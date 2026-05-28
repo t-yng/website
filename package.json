@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "panda": "panda codegen",
-    "panda:watch": "panda codegen --watch"
+    "panda:watch": "panda codegen --watch",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@shikijs/markdown-it": "^4.1.0",
