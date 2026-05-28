@@ -66,7 +66,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             maxWidth: "560px",
           })}
         >
-          I'm a software developer focused on building clean, performant, and accessible web
+          I&apos;m a software developer focused on building clean, performant, and accessible web
           experiences. Currently open to new opportunities.
         </p>
 

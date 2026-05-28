@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { defaultLocale } from "@/lib/i18n";
 
 const archivo = Archivo({
   subsets: ["latin", "latin-ext"],
@@ -14,14 +16,17 @@ export const metadata: Metadata = {
   description: "Personal website of Tomohiro Yanagi, a software developer.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const lang = headersList.get("x-locale") ?? defaultLocale;
+
   return (
     <html
-      lang="ja"
+      lang={lang}
       suppressHydrationWarning
       className={`${archivo.variable}`}
     >

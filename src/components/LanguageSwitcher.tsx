@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { css } from "@/styled-system/css";
-import type { Locale } from "@/repositories/PostRepository";
+import type { Locale } from "@/lib/i18n";
+import { saveLocaleCookie } from "@/lib/cookie";
 
 type Props = {
   currentLocale: Locale;
@@ -20,6 +23,7 @@ export function LanguageSwitcher({ currentLocale, jaHref, enHref, enAvailable = 
     >
       <Link
         href={jaHref}
+        onClick={() => saveLocaleCookie("ja")}
         aria-current={currentLocale === "ja" ? "page" : undefined}
         className={css({
           fontSize: "xs",
@@ -48,6 +52,7 @@ export function LanguageSwitcher({ currentLocale, jaHref, enHref, enAvailable = 
       {enAvailable ? (
         <Link
           href={enHref}
+          onClick={() => saveLocaleCookie("en")}
           aria-current={currentLocale === "en" ? "page" : undefined}
           className={css({
             fontSize: "xs",
