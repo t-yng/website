@@ -5,7 +5,7 @@ import { sortPostsByDateDesc } from "@/lib/sort";
 import { PAGINATION_POST_COUNT_PER_PAGE, PAGINATION_MIDDLE_PAGES } from "@/constants";
 import { PostEntry } from "./_components/PostEntry";
 import { Pagination } from "./_components/Pagination";
-import type { Locale } from "@/repositories/PostRepository";
+import type { Locale } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Blog",

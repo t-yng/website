@@ -7,8 +7,8 @@ import { range } from "@/lib/array";
 import { PAGINATION_POST_COUNT_PER_PAGE, PAGINATION_MIDDLE_PAGES } from "@/constants";
 import { PostEntry } from "../../_components/PostEntry";
 import { Pagination } from "../../_components/Pagination";
-import type { Locale } from "@/repositories/PostRepository";
-import { locales } from "@/repositories/PostRepository";
+import type { Locale } from "@/lib/i18n";
+import { locales } from "@/lib/i18n";
 
 type Props = {
   params: Promise<{ lang: string; page: string }>;

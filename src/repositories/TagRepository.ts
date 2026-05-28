@@ -1,5 +1,6 @@
 import { Tag } from "@/types/Tag";
-import { PostRepository, type Locale, defaultLocale } from "./PostRepository";
+import { PostRepository } from "./PostRepository";
+import { type Locale, defaultLocale } from "@/lib/i18n";
 
 export class TagRepository {
   getAllTags(locale: Locale = defaultLocale): Tag[] {

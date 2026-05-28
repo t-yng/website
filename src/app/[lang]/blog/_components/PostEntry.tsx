@@ -2,7 +2,7 @@ import Link from "next/link";
 import { css } from "@/styled-system/css";
 import { Post } from "@/types/Post";
 import { formatDate } from "@/lib/format";
-import type { Locale } from "@/repositories/PostRepository";
+import type { Locale } from "@/lib/i18n";
 
 type Props = {
   post: Post;

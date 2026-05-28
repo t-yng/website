@@ -7,7 +7,7 @@ import { PostRepository } from "@/repositories/PostRepository";
 import { NotFoundPostError } from "@/repositories/error";
 import { formatDate } from "@/lib/format";
 import { PostContent } from "../_components/PostContent";
-import type { Locale } from "@/repositories/PostRepository";
+import type { Locale } from "@/lib/i18n";
 
 type Props = {
   params: Promise<{ lang: string; slug: string }>;

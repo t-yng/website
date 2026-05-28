@@ -1,7 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { locales } from "@/repositories/PostRepository";
-import type { Locale } from "@/repositories/PostRepository";
+import { locales, type Locale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {

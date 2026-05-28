@@ -10,10 +10,7 @@ import sizeOf from "image-size";
 import cpx from "cpx";
 import { Post } from "@/types/Post";
 import { NotFoundPostError } from "./error";
-
-export type Locale = "ja" | "en";
-export const locales: Locale[] = ["ja", "en"];
-export const defaultLocale: Locale = "ja";
+import { type Locale, defaultLocale, locales } from "@/lib/i18n";
 
 let shikiPlugin: ((md: MarkdownIt) => void) | null = null;
 
@@ -26,7 +23,7 @@ async function getShikiPlugin() {
 }
 
 export class PostRepository {
-  getAllPosts(locale: Locale = defaultLocale): Post[] {
+  getAllPosts(locale: Locale): Post[] {
     const slugs = this.getAllSlugs(locale);
     return slugs
       .map((slug) => {
@@ -39,7 +36,7 @@ export class PostRepository {
       .filter((p): p is Post => p != null);
   }
 
-  async getPostBySlugAsync(slug: string, locale: Locale = defaultLocale): Promise<Post> {
+  async getPostBySlugAsync(slug: string, locale: Locale): Promise<Post> {
     const fileName = PostRepository.postFileName(locale);
     const fullPath = join(PostRepository.postsDirectory(), slug, fileName);
 
@@ -71,13 +68,7 @@ export class PostRepository {
             token.attrSet("height", dimensions.height.toString());
           }
 
-          const publicImageDirectory = path.join(
-            process.cwd(),
-            "public",
-            "images",
-            "posts",
-            slug
-          );
+          const publicImageDirectory = path.join(process.cwd(), "public", "images", "posts", slug);
           cpx.copySync(imagePath, publicImageDirectory, { update: true });
           token.attrSet("src", urlJoin(`/images/posts/${slug}`, src));
         }
@@ -117,7 +108,7 @@ export class PostRepository {
     };
   }
 
-  getPostBySlug(slug: string, locale: Locale = defaultLocale): Post {
+  getPostBySlug(slug: string, locale: Locale): Post {
     const fileName = PostRepository.postFileName(locale);
     const fullPath = join(PostRepository.postsDirectory(), slug, fileName);
 
@@ -140,27 +131,27 @@ export class PostRepository {
     };
   }
 
-  getPostsByTag(tag: string, locale: Locale = defaultLocale): Post[] {
+  getPostsByTag(tag: string, locale: Locale): Post[] {
     return this.getAllPosts(locale).filter((post) =>
-      post.tags.map((t) => t.toLowerCase()).includes(tag.toLowerCase())
+      post.tags.map((t) => t.toLowerCase()).includes(tag.toLowerCase()),
     );
   }
 
   availableLocales(slug: string): Locale[] {
     return locales.filter((locale) =>
       fs.existsSync(
-        join(PostRepository.postsDirectory(), slug, PostRepository.postFileName(locale))
-      )
+        join(PostRepository.postsDirectory(), slug, PostRepository.postFileName(locale)),
+      ),
     );
   }
 
-  private getAllSlugs(locale: Locale = defaultLocale): string[] {
+  private getAllSlugs(locale: Locale): string[] {
     return fs
       .readdirSync(PostRepository.postsDirectory())
       .filter((slug) =>
         fs.existsSync(
-          join(PostRepository.postsDirectory(), slug, PostRepository.postFileName(locale))
-        )
+          join(PostRepository.postsDirectory(), slug, PostRepository.postFileName(locale)),
+        ),
       );
   }
 

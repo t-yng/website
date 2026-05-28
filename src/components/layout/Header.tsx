@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { css } from "@/styled-system/css";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import type { Locale } from "@/repositories/PostRepository";
+import type { Locale } from "@/lib/i18n";
 
 type Props = {
   lang: Locale;

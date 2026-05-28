@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { css } from "@/styled-system/css";
 import { range } from "@/lib/array";
-import type { Locale } from "@/repositories/PostRepository";
+import type { Locale } from "@/lib/i18n";
 
 type Props = {
   currentPage: number;
