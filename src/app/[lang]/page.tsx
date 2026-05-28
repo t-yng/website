@@ -150,9 +150,6 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             <ButtonLink href={`/${lang}/blog`} variant="outline">
               View blog
             </ButtonLink>
-            <ButtonLink href={`/${lang}/contact`} variant="outline">
-              Get in Touch
-            </ButtonLink>
           </div>
         </div>
       </section>

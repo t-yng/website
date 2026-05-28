@@ -61,7 +61,6 @@ export default function Header({ lang }: Props) {
     { href: `/${lang}/about`, label: "About" },
     { href: `/${lang}/projects`, label: "Projects" },
     { href: `/${lang}/blog`, label: "Blog" },
-    { href: `/${lang}/contact`, label: "Contact" },
   ];
 
   const pathWithoutLang = pathname.replace(`/${lang}`, "") || "";
