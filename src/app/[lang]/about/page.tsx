@@ -8,36 +8,64 @@ export const metadata: Metadata = {
 
 const skills = [
   "TypeScript",
+  "JavaScript",
+  "Python",
+  "PHP",
   "React",
   "Next.js",
+  "Vue.js",
+  "Nuxt.js",
   "Node.js",
+  "NestJS",
+  "Express",
+  "FastAPI",
   "PostgreSQL",
-  "GraphQL",
-  "Docker",
+  "MySQL",
+  "Redis",
   "AWS",
+  "Docker",
+  "Terraform",
+  "GitHub Actions",
+  "Jest",
+  "Vitest",
+  "Playwright",
 ];
 
 const experience = [
   {
-    company: "Company Name",
-    role: "Senior Software Engineer",
-    period: "2022 — Present",
-    description:
-      "Led frontend architecture decisions, improved Core Web Vitals scores across products, and mentored junior engineers.",
+    company: "OPENHEART Inc.",
+    role: "Full Stack Developer",
+    period: "Aug 2024 — Present",
+    bullets: [
+      "Led backend architecture, database design, and web API development with TypeScript, Node.js, NestJS and AWS.",
+      "Designed a scalable cloud 3D data generation pipeline integrating object storage (R2) and a distributed job queue (SQS) to enable asynchronous processing of long-running jobs.",
+      "Implemented performance monitoring with Datadog and improved RESTful API latency by 50% by eliminating key bottlenecks.",
+      "Designed and maintained CI/CD pipelines using GitHub Actions, reducing CI test runtime by 50%.",
+      "Built an AI-powered bug-fix pipeline using GenAI tools to auto-generate PRs and documentation, cutting bug resolution lead time by 30%.",
+      "Designed and implemented automated test suites using Jest, reaching 70% coverage for critical backend services.",
+    ],
   },
   {
-    company: "Previous Company",
-    role: "Software Engineer",
-    period: "2019 — 2022",
-    description:
-      "Built and shipped features across a React/Node.js stack, collaborated with design to implement accessible UI components.",
-  },
-  {
-    company: "Startup Inc.",
+    company: "YAMAP Inc.",
     role: "Frontend Developer",
-    period: "2017 — 2019",
-    description:
-      "Developed the company's customer-facing web application from the ground up using Vue.js and REST APIs.",
+    period: "Jun 2021 — Mar 2024",
+    bullets: [
+      "Led the frontend team as Tech Lead, mentoring junior engineers through pair programming, structured code reviews, and regular feedback cycles.",
+      "Reduced render time from 200ms to 50ms by optimizing React component state updates and lifecycles to eliminate unnecessary re-renders.",
+      "Aligned code review goals across the team and reinforced coding standards to prevent regressions and reduce spec-miss defects.",
+      "Drove test automation adoption end-to-end, raising coverage from 2% to 65% and unblocking regular dependency upgrades.",
+    ],
+  },
+  {
+    company: "Hamee Corp.",
+    role: "Full Stack Developer",
+    period: "Apr 2016 — May 2021",
+    bullets: [
+      "Built and maintained E-commerce SaaS platform features using PHP and HTML/CSS/JavaScript.",
+      "Led the migration of a legacy E-Commerce platform UI, refactoring 10,000+ lines of code to improve performance and maintainability.",
+      "Designed and implemented a memory-efficient chunked CSV import feature with PHP, processing 10,000+ rows without memory overflow.",
+      "Developed API servers using Node.js and AWS Lambda to facilitate communication between mobile applications and IoT products.",
+    ],
   },
 ];
 
@@ -71,31 +99,16 @@ export default function AboutPage() {
           height: "3px",
           backgroundColor: "token(colors.accent)",
           borderRadius: "full",
-          mb: "10",
+          mb: "6",
         })}
       />
 
       {/* Bio */}
       <div
         className={css({
-          display: "grid",
-          gridTemplateColumns: { base: "1fr", md: "1fr 2fr" },
-          gap: { base: "10", md: "16" },
           mb: "16",
-          alignItems: "start",
         })}
       >
-        <div
-          className={css({
-            width: "100%",
-            aspectRatio: "1",
-            backgroundColor: "token(colors.border)",
-            borderRadius: "lg",
-            maxWidth: "240px",
-          })}
-          aria-label="Profile photo placeholder"
-        />
-
         <div>
           <p
             className={css({
@@ -105,19 +118,10 @@ export default function AboutPage() {
               mb: "5",
             })}
           >
-            I'm a software developer with 7+ years of experience building web applications. I care
-            deeply about writing clean, maintainable code and creating experiences that are fast and
-            accessible for everyone.
-          </p>
-          <p
-            className={css({
-              fontSize: "lg",
-              color: "token(colors.secondary)",
-              lineHeight: "1.8",
-            })}
-          >
-            When I'm not coding, you'll find me reading, hiking, or experimenting with new cooking
-            recipes. I'm based in Tokyo, Japan and open to remote work worldwide.
+            I&apos;m a Full Stack Developer with 9+ years of experience building web applications
+            using TypeScript, Node.js, and React. I take end-to-end ownership from requirements
+            analysis and system design to backend development, frontend implementation, testing, and
+            deployment.
           </p>
         </div>
       </div>
@@ -197,56 +201,77 @@ export default function AboutPage() {
             <li
               key={item.company}
               className={css({
-                display: "grid",
-                gridTemplateColumns: { base: "1fr", sm: "160px 1fr" },
-                gap: { base: "1", sm: "8" },
                 pb: "8",
                 borderBottom: "1px solid token(colors.border)",
                 _last: { borderBottom: "none", pb: 0 },
               })}
             >
-              <span
+              <div
                 className={css({
-                  fontSize: "sm",
-                  color: "token(colors.muted)",
-                  fontWeight: "500",
-                  pt: { sm: "1" },
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "baseline",
+                  flexWrap: "wrap",
+                  gap: "1",
+                  mb: "1",
                 })}
               >
-                {item.period}
-              </span>
-              <div>
                 <h3
                   className={css({
                     fontFamily: "token(fonts.heading)",
                     fontSize: "lg",
                     fontWeight: "600",
                     color: "token(colors.text)",
-                    mb: "1",
                   })}
                 >
                   {item.role}
                 </h3>
-                <p
+                <span
                   className={css({
                     fontSize: "sm",
-                    color: "token(colors.accent)",
+                    color: "token(colors.muted)",
                     fontWeight: "500",
-                    mb: "3",
+                    whiteSpace: "nowrap",
                   })}
                 >
-                  {item.company}
-                </p>
-                <p
-                  className={css({
-                    fontSize: "base",
-                    color: "token(colors.secondary)",
-                    lineHeight: "1.7",
-                  })}
-                >
-                  {item.description}
-                </p>
+                  {item.period}
+                </span>
               </div>
+              <p
+                className={css({
+                  fontSize: "sm",
+                  color: "token(colors.accent)",
+                  fontWeight: "500",
+                  mb: "3",
+                })}
+              >
+                {item.company}
+              </p>
+              <ul
+                className={css({
+                  listStyle: "disc",
+                  p: 0,
+                  m: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "2",
+                  pl: "4",
+                })}
+              >
+                {item.bullets.map((bullet, i) => (
+                  <li
+                    key={i}
+                    className={css({
+                      fontSize: "base",
+                      color: "token(colors.secondary)",
+                      lineHeight: "1.7",
+                      position: "relative",
+                    })}
+                  >
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ol>
