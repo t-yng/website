@@ -1,5 +1,22 @@
 @layer reset, base, tokens, recipes, utilities;
 
+@keyframes blobFloat1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(40px, -60px) scale(1.15); }
+  66%       { transform: translate(-30px, 30px) scale(0.9); }
+}
+
+@keyframes blobFloat2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(-50px, 40px) scale(0.95); }
+  66%       { transform: translate(40px, -30px) scale(1.1); }
+}
+
+@keyframes blobFloat3 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50%       { transform: translate(20px, 50px) scale(1.08); }
+}
+
 @layer base {
   body {
     background-color: var(--colors-background);
