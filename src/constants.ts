@@ -1,0 +1,2 @@
+export const PAGINATION_POST_COUNT_PER_PAGE = 10;
+export const PAGINATION_MIDDLE_PAGES = 3;
