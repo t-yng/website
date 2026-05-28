@@ -40,7 +40,6 @@ export default function Footer() {
         >
           {[
             { href: "https://github.com", label: "GitHub" },
-            { href: "https://twitter.com", label: "Twitter" },
             { href: "https://linkedin.com", label: "LinkedIn" },
           ].map(({ href, label }) => (
             <a
