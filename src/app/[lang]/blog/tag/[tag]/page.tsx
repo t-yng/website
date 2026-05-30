@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { css } from "@/styled-system/css";
-import { PostRepository } from "@/repositories/PostRepository";
-import { TagRepository } from "@/repositories/TagRepository";
 import { sortPostsByDateDesc } from "@/lib/sort";
+import { locales, type Locale } from "@/lib/i18n";
+import { PostRepository } from "../../_repositories/PostRepository";
+import { TagRepository } from "../../_repositories/TagRepository";
 import { PostEntry } from "../../_components/PostEntry";
-import type { Locale } from "@/lib/i18n";
-import { locales } from "@/lib/i18n";
 
 type Props = {
   params: Promise<{ lang: string; tag: string }>;

@@ -9,7 +9,7 @@ import urlJoin from "url-join";
 import sizeOf from "image-size";
 import cpx from "cpx";
 import { Post } from "@/types/Post";
-import { NotFoundPostError } from "./error";
+import { NotFoundPostError } from "@/lib/error";
 import { type Locale, defaultLocale, locales } from "@/lib/i18n";
 
 let shikiPlugin: ((md: MarkdownIt) => void) | null = null;

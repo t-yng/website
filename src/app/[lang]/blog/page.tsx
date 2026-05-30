@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { css } from "@/styled-system/css";
-import { PostRepository } from "@/repositories/PostRepository";
+import { PostRepository } from "./_repositories/PostRepository";
 import { sortPostsByDateDesc } from "@/lib/sort";
 import { PAGINATION_POST_COUNT_PER_PAGE, PAGINATION_MIDDLE_PAGES } from "@/constants";
 import { PostEntry } from "./_components/PostEntry";

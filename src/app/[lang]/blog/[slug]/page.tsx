@@ -3,11 +3,11 @@ import { cache } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { css } from "@/styled-system/css";
-import { PostRepository } from "@/repositories/PostRepository";
-import { NotFoundPostError } from "@/repositories/error";
+import { NotFoundPostError } from "@/lib/error";
 import { formatDate } from "@/lib/format";
-import { PostContent } from "../_components/PostContent";
 import type { Locale } from "@/lib/i18n";
+import { PostContent } from "../_components/PostContent";
+import { PostRepository } from "../_repositories/PostRepository";
 
 type Props = {
   params: Promise<{ lang: string; slug: string }>;
