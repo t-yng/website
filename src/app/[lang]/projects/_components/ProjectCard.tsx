@@ -23,10 +23,10 @@ export function ProjectCard({ project }: { project: Project }) {
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
-        _hover: {
-          borderColor: "token(colors.secondary)",
-          boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
-        },
+        // _hover: {
+        //   borderColor: "token(colors.secondary)",
+        //   boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+        // },
         transition: "border-color 0.2s, box-shadow 0.2s",
       })}
     >
@@ -43,7 +43,7 @@ export function ProjectCard({ project }: { project: Project }) {
             src={project.image}
             alt={`${project.title} screenshot`}
             fill
-            className={css({ objectFit: "cover" })}
+            className={css({ objectFit: "fill" })}
           />
         </div>
       )}
@@ -119,13 +119,7 @@ export function ProjectCard({ project }: { project: Project }) {
           })}
         >
           {project.live && (
-            <ButtonLink
-              variant="outline"
-              href={project.live}
-              size="xs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <ButtonLink href={project.live} size="xs" target="_blank" rel="noopener noreferrer">
               Live
             </ButtonLink>
           )}

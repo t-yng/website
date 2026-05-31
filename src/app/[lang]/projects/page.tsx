@@ -10,15 +10,16 @@ export const metadata: Metadata = {
 
 const projects: Project[] = [
   {
-    title: "DevFlow",
+    title: "Wasm Othello",
     description:
-      "A project management tool for developers with GitHub integration, sprint planning, and automated release notes powered by AI.",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "OpenAI"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "An Othello game running in the browser with a CPU opponent powered by WebAssembly. Implemented the game AI algorithm from scratch in Rust and benchmarked it against a JavaScript equivalent to quantify the real-world performance gains of WASM.",
+    tags: ["Next.js", "TypeScript", "Rust", "WebAssembly"],
+    github: "https://github.com/t-yng/wasm-othello",
+    live: "https://wasm-othello.t-yng.jp/",
+    image: "/images/projects/wasm-othello.png",
   },
   {
-    title: "Markdown Notes",
+    title: "Review Cat",
     description:
       "A minimalist note-taking app with real-time markdown preview, offline support via IndexedDB, and end-to-end encrypted sync.",
     tags: ["React", "Vite", "IndexedDB", "Web Crypto API"],
