@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Archivo } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
@@ -25,13 +26,10 @@ export default async function RootLayout({
   const lang = headersList.get("x-locale") ?? defaultLocale;
 
   return (
-    <html
-      lang={lang}
-      suppressHydrationWarning
-      className={`${archivo.variable}`}
-    >
+    <html lang={lang} suppressHydrationWarning className={`${archivo.variable}`}>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
