@@ -10,7 +10,7 @@ import sizeOf from "image-size";
 import cpx from "cpx";
 import { Post } from "@/types/Post";
 import { NotFoundPostError } from "@/lib/error";
-import { type Locale, defaultLocale, locales } from "@/lib/i18n";
+import { type Locale, locales } from "@/lib/i18n";
 
 let shikiPlugin: ((md: MarkdownIt) => void) | null = null;
 
@@ -156,7 +156,7 @@ export class PostRepository {
   }
 
   private static postFileName(locale: Locale): string {
-    return locale === defaultLocale ? "index.md" : `index.${locale}.md`;
+    return `index.${locale}.md`;
   }
 
   private static postsDirectory(): string {
