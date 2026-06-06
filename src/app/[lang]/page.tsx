@@ -143,12 +143,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               flexWrap: "wrap",
             })}
           >
-            <ButtonLink href={`/${lang}/about`}>View my profile</ButtonLink>
-            <ButtonLink href={`/${lang}/projects`} variant="outline">
-              View projects
-            </ButtonLink>
+            <ButtonLink href={`/${lang}/projects`}>View projects</ButtonLink>
             <ButtonLink href={`/${lang}/blog`} variant="outline">
               View blog
+            </ButtonLink>
+            <ButtonLink href={`/${lang}/about`} variant="outline">
+              View my profile
             </ButtonLink>
           </div>
         </div>
