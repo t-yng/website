@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Archivo } from "next/font/google";
-import { headers } from "next/headers";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { defaultLocale } from "@/lib/i18n";
@@ -17,16 +16,13 @@ export const metadata: Metadata = {
   description: "Personal website of Tomohiro Yanagi, a software developer.",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = await headers();
-  const lang = headersList.get("x-locale") ?? defaultLocale;
-
   return (
-    <html lang={lang} suppressHydrationWarning className={`${archivo.variable}`}>
+    <html lang={defaultLocale} suppressHydrationWarning className={`${archivo.variable}`}>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
         <Analytics />

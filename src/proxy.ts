@@ -43,9 +43,7 @@ export function proxy(request: NextRequest) {
   const pathLocale = extractLocaleFromPath(pathname);
 
   if (pathLocale) {
-    const requestHeaders = new Headers(request.headers);
-    requestHeaders.set("x-locale", pathLocale);
-    return NextResponse.next({ request: { headers: requestHeaders } });
+    return NextResponse.next();
   }
 
   const locale = detectLocale(request);
