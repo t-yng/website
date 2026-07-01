@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { HtmlLangSync } from "@/components/HtmlLangSync";
 import { defaultLocale, isLocale, locales } from "@/lib/i18n";
 
 export function generateStaticParams() {
@@ -18,6 +19,7 @@ export default async function LangLayout({
 
   return (
     <>
+      <HtmlLangSync lang={locale} />
       <Header lang={locale} />
       <main>{children}</main>
       <Footer />
