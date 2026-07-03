@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const projects: Project[] = [
   {
+    title: "Claude Review Dashboard",
+    description:
+      "A local web app that lets Claude review your GitHub pull requests, then lets a human cherry-pick only the valuable findings and post them back as inline review comments. Reuses your existing Claude Code and gh CLI auth, checks out each PR into a temp dir so the AI can explore the whole codebase, and streams review progress over SSE.",
+    tags: ["Next.js", "TypeScript", "React", "Claude Agent SDK", "GitHub CLI"],
+    github: "https://github.com/t-yng/claude-review-dashboard",
+    image: "/images/projects/claude-review-dashboard.png",
+  },
+  {
     title: "Review Cat",
     description:
       "A desktop app for managing GitHub pull requests that need your review. Aggregates review requests across multiple repositories so you can triage and act on them quickly.",
